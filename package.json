@@ -1,0 +1,45 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "test technique pour beebuzziness",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha --require ts-node/register/transpile-only --require source-map-support/register --recursive \"test/**/*.spec.ts\"",
+    "start": "./node_modules/.bin/ts-node src/index.ts",
+    "build": "./node_modules/.bin/tsc",
+    "start-prod": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bassochette/test_lcd.git"
+  },
+  "author": "Julien Prugne",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bassochette/test_lcd/issues"
+  },
+  "homepage": "https://github.com/bassochette/test_lcd#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.11.3",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0",
+    "sinon": "^7.2.7",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.3333",
+    "@types/sinon": "^7.0.10"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "test",
+      "dist"
+    ],
+    "all": true
+  }
+}
